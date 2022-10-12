@@ -16,13 +16,15 @@
 
 if (isset($_FILES['userfile']['tmp_name'])) {
 
+
+
 $fileToConvert = file_get_Contents($_FILES['userfile']['tmp_name']  , true);
 
 $fileContent = array_map("str_getcsv", explode("\n", $fileToConvert));
 
 $headers = $fileContent[0];
 
-echo csvToJson($fileContent, $headers);
+echo csvToJson($fileContent, $headers); }
 
 function csvToJson($fileContent, $headers) {
 
@@ -42,7 +44,7 @@ return json_encode($json, JSON_PRETTY_PRINT);
 }
 
 
-}
+//}
 
 ?>
 </body>
